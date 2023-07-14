@@ -12,7 +12,7 @@ body {
     width: 700px;
     position: relative;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     margin: auto;
 }
 
@@ -92,20 +92,51 @@ button#close {
 .library > .card {
     border: 1px solid black;
     width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 0.3fr;
+    padding: 15px;
+    gap: 5px;
 }
 
 .library {
-    grid-column: 1 / 3;
+    display: grid;
+    gap: 10px;
 }
 
-.card > #remove {
+.card > .remove {
     background-image: url(./icons/delete.svg);
     height: 30px;
     width: 30px;
     border: none;
     background-color: white;
+    grid-row: 1 / 5;
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-self: center;
 }
 
-.card {
+.grid-container {
     display: grid;
+    grid-template-columns: 0.5fr 4fr;
+    justify-self: start;
+    gap: 5px;
+}
+
+h1 {
+    grid-column: 1 / 2;
+}
+
+#new-book {
+    width: 80%;
+    justify-self: end;
+    grid-column: 2 / 3;
+}
+
+.header {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-flow: column;
+    width: 100%;
+    margin: 10px 0;
 }

@@ -11,8 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>My Library</h1>
-    <button id="new-book">NEW BOOK</button>
+    <div class="header">
+        <h1>My Library</h1>
+        <button id="new-book">NEW BOOK</button>
+    </div>
     <div class="form">
         <form action="">
             <input type="text" id="title" name="title" placeholder="title">
@@ -29,20 +31,24 @@
     </div>
     <div class="library">
         <div class="card">
-            <div id="book-title">How to Win Friends And Influence People</div>
-            <div id="book-author">by <span>Dale Carneige</span></div>
-            <div id="book-pages"><span>300</span> pages</div>
-            <input type="checkbox" id="checkbox" name="checkbox">
-            <label>Mark as read</label>
-            <button id="remove"></button>
+            <div class="book-title">How to Win Friends And Influence People</div>
+            <div class="book-author">by Dale Carneige</div>
+            <div class="book-pages"><span>300</span> pages</div>
+            <div class="grid-container">
+                <input type="checkbox" id="checkbox" name="checkbox">
+                <label for="checkbox">Mark as read</label>
+            </div>
+            <button class="remove"></button>
         </div>
         <div class="card">
-            <div id="book-title">48 Laws of Power</div>
-            <div id="book-author">by <span>Robert Greene</span></div>
-            <div id="book-pages"><span>300</span> pages</div>
-            <input type="checkbox" id="checkbox" name="checkbox">
-            <label>Mark as read</label>
-            <button id="remove"></button>
+            <div class="book-title">48 Laws of Power</div>
+            <div class="book-author">by Robert Greene</div>
+            <div class="book-pages"><span>300</span> pages</div>
+            <div class="grid-container">
+                <input type="checkbox" id="checkbox" name="checkbox">
+                <label for="checkbox">Mark as read</label>
+            </div>
+            <button class="remove"></button>
         </div>
     </div>
 </body>

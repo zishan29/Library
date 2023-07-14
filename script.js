@@ -12,6 +12,43 @@ function addBookToLibrary(title, author, pages, readStatus) {
     myLibrary.push(book);
 }
 
+function addCard(title, author, pages, status) {
+    const library = document.querySelector(".library");
+    const btn = document.createElement('button');
+    btn.classList.add("remove")
+    const div1 = document.createElement('div');
+    div1.classList.add("card");
+    const div2 = document.createElement('div');
+    div2.textContent = title;
+    div2.classList.add("book-title");
+    const div3 = document.createElement('div');
+    div3.textContent = ` by ${author}`;
+    div3.classList.add("book-author");
+    const div4 = document.createElement('div');
+    div4.textContent = pages;
+    div4.classList.add("book-pages");
+    const div5 = document.createElement('div');
+    div5.classList.add("grid-container");
+    const input = document.createElement('input');
+    input.setAttribute('type', 'checkbox');
+    input.setAttribute("id", "checkbox");
+    input.setAttribute("name", "checkbox");
+    if(status === "true") {
+        input.checked = true;
+    }
+    const label = document.createElement('label');
+    label.setAttribute("for", "checkbox");
+    label.textContent = "Mark as read";
+    div5.appendChild(input);
+    div5.appendChild(label);
+    div1.appendChild(btn);
+    div1.appendChild(div2);
+    div1.appendChild(div3);
+    div1.appendChild(div4);
+    div1.appendChild(div5);
+    library.appendChild(div1);
+}
+
 addBookToLibrary("Can't Hurt Me", "David Gogins", 200, false);
 addBookToLibrary("How to win friends and influence people", "Dale Carneige", 300, true);
 
@@ -32,11 +69,8 @@ close.addEventListener('click', () => {
 });
 
 submit.addEventListener('click', (event) => {
-    let t = title.value;
-    let a  = author.value;
-    let p = pages.value;
-    let s = state.value;
-    addBookToLibrary(t, a, p, s);
+    addBookToLibrary(title.value, author.value, pages.value, state.value);
+    addCard(title.value, author.value, pages.value, state.value);
     title.value = "";
     author.value = "";
     pages.value = "";
