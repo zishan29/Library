@@ -5,10 +5,14 @@
 
 :root {
     height: 100%;
+    width: 70vw;
 }
 
 body {
     position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
 }
 
 .form {
@@ -70,9 +74,10 @@ button[type="submit"] {
     color: gray;
 }
 
-label {
+label[for="status"] {
     font-size: 18px;
     color: white;
+    font-weight: bold;
 }
 
 button#close {
@@ -81,4 +86,13 @@ button#close {
     background-color: white;
     font-size: 18px;
     color: gray;
+}
+
+.library > .card {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.library {
+    grid-column: 1 / 3;
 }
