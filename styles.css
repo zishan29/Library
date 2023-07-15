@@ -90,7 +90,8 @@ button#close {
 }
 
 .library > .card {
-    border: 1px solid black;
+    border: 1px solid rgb(104, 103, 103);
+    border-radius: 5px;
     width: 100%;
     display: grid;
     grid-template-columns: 4fr 0.3fr;
@@ -124,12 +125,18 @@ button#close {
 
 h1 {
     grid-column: 1 / 2;
+    font-size: 40px;
 }
 
 #new-book {
     width: 80%;
+    height: 80%;
     justify-self: end;
     grid-column: 2 / 3;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-self: center;
 }
 
 .header {
@@ -139,4 +146,17 @@ h1 {
     grid-auto-flow: column;
     width: 100%;
     margin: 10px 0;
+}
+
+.book-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.book-author, .book-pages {
+    color: rgb(104, 103, 103);
+}
+
+label {
+    color: rgb(104, 103, 103);
 }

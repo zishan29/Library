@@ -1,5 +1,5 @@
 let myLibrary = [];
-let count = 3;
+let count = 0;
 
 function Book(title, author, pages, readStatus) {
     this.title = title;
@@ -54,8 +54,10 @@ function addCard() {
     library.appendChild(div1);
 }
 
-addBookToLibrary("Can't Hurt Me", "David Gogins", 200, false);
-addBookToLibrary("How to win friends and influence people", "Dale Carneige", 300, true);
+addBookToLibrary("Can't Hurt Me", "David Gogins", "200", false);
+addCard();
+addBookToLibrary("How to win friends and influence people", "Dale Carneige", "300", true);
+addCard();
 
 const newBook = document.querySelector('#new-book');
 const form = document.querySelector(".form")
