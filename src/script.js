@@ -16,6 +16,16 @@ function addBookToLibrary(title, author, pages, readStatus) {
   myLibrary.push(book);
 }
 
+const remove = document.querySelectorAll('.remove');
+const newBook = document.querySelector('#new-book');
+const form = document.querySelector('.form');
+const close = document.querySelector('#close');
+const submit = document.querySelector('#submit');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
+const state = document.querySelector('#status');
+
 function addCard() {
   const library = document.querySelector('.library');
   const btn = document.createElement('button');
@@ -64,28 +74,20 @@ addBookToLibrary(
 );
 addCard();
 
-const newBook = document.querySelector('#new-book');
-const form = document.querySelector('.form');
-const close = document.querySelector('#close');
-const submit = document.querySelector('#submit');
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const pages = document.querySelector('#pages');
-const state = document.querySelector('#status');
-const remove = document.querySelectorAll('.remove');
-
-remove.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove')) {
     e.target.parentElement.remove();
-  });
+  }
 });
 
 newBook.addEventListener('click', () => {
-  form.classList.add('open-form');
+  form.style.visibility = 'visible';
+  newBook.style.visibility = 'hidden';
 });
 
 close.addEventListener('click', () => {
-  form.classList.remove('open-form');
+  form.style.visibility = 'hidden';
+  newBook.style.visibility = 'visible';
 });
 
 submit.addEventListener('click', (event) => {
@@ -95,7 +97,8 @@ submit.addEventListener('click', (event) => {
   author.value = '';
   pages.value = '';
   state.value = true;
-  form.classList.remove('open-form');
+  form.style.visibility = 'hidden';
+  newBook.style.visibility = 'visible';
   remove.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.target.parentElement.remove();

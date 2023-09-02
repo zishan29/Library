@@ -14,6 +14,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   margin: auto;
+  grid-auto-rows: max-content;
+  gap: 10px;
 }
 
 .form {
@@ -21,25 +23,20 @@ body {
   justify-items: center;
   align-items: center;
   visibility: hidden;
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
 }
 
 form {
-  background-color: rgb(189, 189, 189);
-  width: 15vw;
+  background-color: #dddddd;
   padding: 10px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 40px) 15px repeat(3, 40px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
   gap: 10px;
   padding: 20px;
   border-radius: 8px;
-  position: absolute;
-  min-width: 250px;
-  top: 28vh;
-}
-
-.open-form {
-  visibility: visible;
+  width: 94.5%;
 }
 
 input {
@@ -47,6 +44,18 @@ input {
   border: none;
   padding-left: 10px;
   font-size: 18px;
+  background-color: transparent;
+  height: 35px;
+  border: 1px solid #aaaaaa;
+  color: #433e3f;
+}
+
+input[type='text'] {
+  grid-column: 1 / -1;
+}
+
+input[type='number'] {
+  grid-column: 1 / 2;
 }
 
 input:enabled {
@@ -57,41 +66,44 @@ select:enabled {
   outline: none;
 }
 
+input::placeholder {
+  color: #aaaaaa;
+}
+
 select {
   border-radius: 8px;
   border: none;
-  background-color: white;
   font-size: 16px;
   padding-left: 5px;
-  color: gray;
+  color: #433e3f;
+  background-color: transparent;
+  grid-column: 2 / -1;
+  border: 1px solid #aaaaaa;
 }
 
 button[type='submit'] {
   border-radius: 8px;
   border: none;
-  background-color: white;
-  font-size: 18px;
-  color: gray;
-}
-
-label[for='status'] {
+  background-color: #433e3f;
   font-size: 18px;
   color: white;
-  font-weight: bold;
+  grid-column: 1 / 2;
+  height: 35px;
 }
 
 button#close {
   border-radius: 8px;
   border: none;
-  background-color: white;
+  background-color: eeeeee;
   font-size: 18px;
-  color: gray;
+  color: #433e3f;
+  grid-column: 2 / -1;
 }
 
 .library > .card {
-  border: 1px solid rgb(104, 103, 103);
+  border: 1px solid #aaaaaa;
   border-radius: 5px;
-  width: 100%;
+  width: 95.5%;
   display: grid;
   grid-template-columns: 4fr 0.3fr;
   padding: 15px;
@@ -101,6 +113,7 @@ button#close {
 .library {
   display: grid;
   gap: 10px;
+  grid-column: 1 / -1;
 }
 
 .card > .remove {
@@ -120,31 +133,31 @@ button#close {
   grid-template-columns: 0.5fr 4fr;
   justify-self: start;
   gap: 5px;
-}
-
-h1 {
-  grid-column: 1 / 2;
-  font-size: 40px;
+  align-items: center;
 }
 
 #new-book {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 50px;
   justify-self: end;
   grid-column: 2 / 3;
-  background-color: white;
-  border: 1px solid black;
+  background-color: transparent;
+  border: 1px solid #aaaaaa;
   border-radius: 5px;
   align-self: center;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  align-self: flex-start;
 }
 
 .header {
-  padding: 15px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
   grid-auto-flow: column;
   width: 100%;
-  margin: 10px 0;
+  grid-column: 1 / -1;
+  font-size: 40px;
+  margin: 20px 0px 10px;
 }
 
 .book-title {
@@ -154,9 +167,5 @@ h1 {
 
 .book-author,
 .book-pages {
-  color: rgb(104, 103, 103);
-}
-
-label {
   color: rgb(104, 103, 103);
 }
