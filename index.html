@@ -9,26 +9,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     />
   </head>
   <body>
     <div class="header">My Library</div>
     <div class="library"></div>
     <button id="new-book">ADD BOOK</button>
-    <div class="form">
-      <form action="">
-        <input type="text" id="title" name="title" placeholder="title" />
-        <input type="text" id="author" name="author" placeholder="author" />
-        <input type="number" id="pages" name="pages" placeholder="pages" />
-        <select id="status" name="read-status">
-          <option value="true">Read</option>
-          <option value="false">Not read</option>
-        </select>
-        <button type="submit" id="submit">Submit</button>
-        <button type="button" id="close">close</button>
-      </form>
-    </div>
+    <form>
+      <input type="text" id="title" name="title" placeholder="title" required />
+      <input
+        type="text"
+        id="author"
+        name="author"
+        placeholder="author"
+        required
+      />
+      <input
+        type="number"
+        id="pages"
+        name="pages"
+        placeholder="pages"
+        required
+      />
+      <select id="status" name="read-status">
+        <option value="true">Read</option>
+        <option value="false">Not read</option>
+      </select>
+      <button type="submit" id="submit">Submit</button>
+      <button type="button" id="close">close</button>
+    </form>
   </body>
 </html>
