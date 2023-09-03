@@ -18,16 +18,10 @@ body {
   gap: 10px;
 }
 
-.form {
-  display: grid;
-  justify-items: center;
-  align-items: center;
+form {
   visibility: hidden;
   grid-row: 3 / 4;
   grid-column: 1 / -1;
-}
-
-form {
   background-color: #dddddd;
   padding: 10px;
   display: grid;

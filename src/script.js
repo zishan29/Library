@@ -18,7 +18,7 @@ function addBookToLibrary(title, author, pages, readStatus) {
 
 const remove = document.querySelectorAll('.remove');
 const newBook = document.querySelector('#new-book');
-const form = document.querySelector('.form');
+const form = document.querySelector('form');
 const close = document.querySelector('#close');
 const submit = document.querySelector('#submit');
 const title = document.querySelector('#title');
